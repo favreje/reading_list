@@ -33,7 +33,7 @@ def create_book(book: schemas.BookCreate, db: Session = Depends(get_db)):
     return crud.create_book(db=db, book=book)
 
 
-@router.get("/{book_id}, response_model=schemas.Book")
+@router.get("/{book_id}", response_model=schemas.Book)
 def read_book(book_id: int, db: Session = Depends(get_db)):
     """
     Get a specific book by id
