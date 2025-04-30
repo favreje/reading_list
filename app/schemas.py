@@ -18,7 +18,7 @@ class BookBase(BaseModel):
     status: str
     start_date: Optional[str] = None
     end_date: Optional[str] = None
-    notes: Optional[str] = None
+    notes: Optional[str] = ""
 
 
 # Properties for creating a book
@@ -40,7 +40,7 @@ class BookUpdate(BaseModel):
     status: Optional[str] = None
     start_date: Optional[str] = None
     end_date: Optional[str] = None
-    notes: Optional[str] = None
+    notes: Optional[str] = ""
 
 
 # Properties shared by models in the database
