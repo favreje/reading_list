@@ -8,17 +8,18 @@
   </head>
   <body>
     <header>
-      <div class="container"></div>
-      <h1>My Reading List</h1>
+      <div class="container">
+        <h1>My Reading List</h1>
       </div>
     </header>
 
     <main class="container">
       <section class="controls">
         <div class="search-filter">
-          <input type="text" id="search" placeholder="Search books...">
+          <input type="text" id="search" placeholder="Search books..." />
           <select id="status-filter">
             <option value="">All Statuses</option>
+            <option value="reading">Reading</option>
             <option value="not_read">Not Read</option>
             <option value="read">Read</option>
             <option value="paused">Paused</option>
@@ -26,7 +27,7 @@
           <button id="add-book-btn" class="btn primary">Add New Book</button>
         </div>
       </section>
-      
+
       <section class="book-list">
         <div id="loading" class="loading-indicator">Loading books...</div>
         <table id="books-table">
@@ -38,13 +39,90 @@
               <th>Status</th>
               <th>Actions</th>
             </tr>
-          <tbody>
+          </thead>
+          <tbody id="books-container">
+            <!-- Books will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+        <div id="no-books" class="hidden">
+          No books found. Add some books to your list!
+        </div>
+      </section>
 
+      <section id="books-form-container" class="modal hidden">
+        <div class="model-content">
+          <span class="close-btn">&times;</span>
+          <h2 id="form-title">Add New Book</h2>
+          <form id="book-form">
+            <div class="form-group">
+              <label for="title">Title*</label>
+              <input type="text" id="title" name="title" required />
+            </div>
+            <div class="form-group">
+              <label for="author">Author*</label>
+              <input type="text" id="author" name="author" required />
+            </div>
+            <div class="form-group">
+              <label for="category">Category*</label>
+              <select id="category" name="category" required>
+                <option value="Fiction">Fiction</option>
+                <option value="Nonfiction">Nonfiction</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="genre">Genre*</label>
+              <input type="text" id="genre" name="genre" required />
+            </div>
+            <div class="form-group">
+              <label for="status">Status*</label>
+              <select id="status" name="status" required>
+                <option value="reading">Reading</option>
+                <option value="not_read">Not Read</option>
+                <option value="read">Read</option>
+                <option value="paused">Paused</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pages">Pages</label>
+              <input type="number" id="pages" name="pages" />
+            </div>
+            <div clss="form-group">
+              <label for="published">Published</label>
+              <input type="date" id="published" name="published" />
+            </div>
+            <div class="form-group checkbox">
+              <input type="checkbox" id="short_list" name="short_list" />
+              <label for="short_list">On Short List</label>
+            </div>
+            <div class="form-group">
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="start_date">Start Date</label>
+              <input type="date" id="start_date" name="start_date" />
+            </div>
+            <div class="form-group">
+              <label for="end_date">End Date</label>
+              <input type="date" id="end_date" name="end_date" />
+            </div>
+            <input type="hidden" id="book-id" />
+            <div class="form-actions">
+              <button type="button" id="cancel-btn" class="btn">Cancel</button>
+              <button type="submit" class="btn primary">Save Book</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
 
+    <footer>
+      <div class="container">
+        <p>My Reading List Manager &copy; 2025</p>
+      </div>
+    </footer>
 
-
-
-
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/app.js"></script>
   </body>
-
 </html>
