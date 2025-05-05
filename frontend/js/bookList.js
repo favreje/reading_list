@@ -1,5 +1,5 @@
 // Book List Display Logic
-import { getBooks, deleteBook } from "./api";
+import { getBooks, deleteBook } from "./api.js";
 
 // DOM elements
 const booksContainer = document.getElementById('books-container');
