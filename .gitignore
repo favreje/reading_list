@@ -2,6 +2,6 @@
 database/
 .env
 __pycache__
-
-
+*.txt
+*.sh
 

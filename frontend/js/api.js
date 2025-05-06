@@ -4,7 +4,7 @@
 const API_URL = 'http://localhost:8000/api';
 
 // Function to fetch all books with optional filters
-export async function getBooks(statusFilter = '', searchQuery = "") {
+export async function getBooks(statusFilter = '', searchQuery = '') {
   let url = `${API_URL}/books`;
 
   // Add filter if provided
@@ -67,7 +67,7 @@ export async function createBook(bookData) {
 export async function updateBook(id, bookData) {
   try {
     const response = await fetch(`${API_URL}/books/${id}`, {
-      method: PUT,
+      method: 'PUT',
       headers: {
         'Contennt-Type': 'application/json'
       },

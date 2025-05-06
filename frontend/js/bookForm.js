@@ -3,6 +3,7 @@
 import { createBook, updateBook, getBook } from "./api.js";
 import { renderBookList } from "./bookList.js"
 
+
 // DOM elements
 const formContainer = document.getElementById('book-form-container');
 const form = document.getElementById('book-form');
@@ -23,7 +24,7 @@ export function openAddForm() {
 }
 
 // Function to open the form for editing a book
-export async function openEditForm() {
+export async function openEditForm(id) {
   try {
     // Fetch book data
     const book = await getBook(id);

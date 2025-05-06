@@ -81,6 +81,7 @@ export function setupDeleteHandler(openEditForm) {
     // Check if we clicked on edit button
     if (event.target.classList.contains('edit-btn')) {
       const id = event.target.dataset.id;
+      console.log("Edit button clicked, ID type:", typeof id, "Value", id);
       openEditForm(id);
     }
   });

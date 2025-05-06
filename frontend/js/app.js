@@ -1,7 +1,7 @@
 // Main Application Logic
 
-import { renderBookList, setupDeleteHandler, setupFilters } from "./bookList.js";
-import { setupFormHandlers, openEditForm } from "./bookForm.js";
+import { renderBookList, setupDeleteHandler, setupFilters } from './bookList.js';
+import { setupFormHandlers, openEditForm } from './bookForm.js';
 
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
