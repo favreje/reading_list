@@ -47,7 +47,7 @@ export async function createBook(bookData) {
     const response = await fetch(`${API_URL}/books`, {
       method: 'POST',
       headers: {
-        'Contennt-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(bookData)
     });
@@ -69,7 +69,7 @@ export async function updateBook(id, bookData) {
     const response = await fetch(`${API_URL}/books/${id}`, {
       method: 'PUT',
       headers: {
-        'Contennt-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(bookData)
     });
