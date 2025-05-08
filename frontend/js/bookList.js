@@ -60,7 +60,7 @@ export async function renderBookList() {
   }
 }
 
-// Event handler for the delete button
+// Event handler for the delete and edit buttons
 export function setupDeleteHandler(openEditForm) {
   booksContainer.addEventListener('click', async (event) => {
     // Check if we clicked a delete button

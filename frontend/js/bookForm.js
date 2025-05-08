@@ -21,6 +21,11 @@ export function openAddForm() {
 
   // Show the container
   formContainer.classList.remove('hidden');
+
+  // Trigger animation
+  setTimeout(() => {
+    formContainer.classList.add('active');
+  }, 10);
 }
 
 // Function to open the form for editing a book
@@ -47,6 +52,11 @@ export async function openEditForm(id) {
 
     // Show the container
     formContainer.classList.remove('hidden');
+
+    // Trigger animation
+    setTimeout(() => {
+      formContainer.classList.add('active');
+    }, 10);
   } catch (error) {
     console.error('Failed to load book for editing:', error);
     alert('Failed to load the book. Please try again.');
@@ -55,8 +65,12 @@ export async function openEditForm(id) {
 
 // Function to close the form
 function closeForm() {
-  formContainer.classList.add('hidden');
-  form.reset();
+  // Animate closing
+  formContainer.classList.remove('active');
+  setTimeout(() => {
+    formContainer.classList.add('hidden');
+    form.reset();
+  }, 300);
 }
 
 // Function to submit the form
