@@ -42,7 +42,7 @@ export async function openEditForm(id) {
     document.getElementById('status').value = book.status;
     document.getElementById('pages').value = book.pages || '';
     document.getElementById('published').value = book.published || '';
-    document.getElementById('short_list').value = book.short_list;
+    document.getElementById('short_list').checked = book.short_list;
     document.getElementById('notes').value = book.notes || '';
     document.getElementById('start_date').value = book.start_date || '';
     document.getElementById('end_date').value = book.end_date || '';
@@ -75,10 +75,14 @@ function closeForm() {
 
 // Function to submit the form
 async function submitForm(event) {
+  console.log("Direct DOM check - checkbox is checked:", document.getElementById('short_list').checked);
   event.preventDefault();
 
   // Get form data
   const formData = new FormData(form);
+
+  console.log("short_list value from form:", formData.get('short_list'));
+
   const bookData = {
     title: formData.get('title'),
     author: formData.get('author'),
@@ -88,11 +92,12 @@ async function submitForm(event) {
     pages: formData.get('pages') ? parseInt(formData.get('pages')) : null,
     published: formData.get('published') || null,
     short_list: formData.get('short_list') === 'on',
-    notes: formData.get('notes') || null,
+    notes: formData.get('notes') || '',
     start_date: formData.get('start_date') || null,
     end_date: formData.get('end_date') || null,
   };
-
+  console.log("Book data being sent:", JSON.stringify(bookData, null, 2));
+  console.log("Short List conversion to boolean:", bookData.short_list);
   try {
     // Check if we're adding or editing
     const bookId = bookIdInput.value;
